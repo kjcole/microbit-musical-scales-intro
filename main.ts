@@ -1,14 +1,14 @@
-input.onButtonPressed(Button.A, function () {
-    for (let value of pitches) {
-        music.playTone(value, music.beat(BeatFraction.Whole))
+input.onButtonPressed(Button.A, function on_button_pressed_a() {
+    for (let note of chromatic) {
+        music.playTone(note, music.beat(BeatFraction.Whole))
     }
 })
-input.onButtonPressed(Button.B, function () {
-    for (let value2 of scale) {
-        music.playTone(pitches[value2], music.beat(BeatFraction.Whole))
+input.onButtonPressed(Button.B, function on_button_pressed_b() {
+    for (let degree of major) {
+        music.playTone(chromatic[degree], music.beat(BeatFraction.Whole))
     }
 })
-let scale: number[] = []
-let pitches: number[] = []
-pitches = [262, 277, 294, 311, 330, 349, 370, 392, 415, 440, 466, 494, 523]
-scale = [0, 2, 4, 5, 7, 9, 11, 12]
+let major : number[] = []
+let chromatic : number[] = []
+chromatic = [Note.C4, Note.CSharp4, Note.D4, Note.Eb4, Note.E4, Note.F4, Note.FSharp4, Note.G4, Note.GSharp4, Note.A4, Note.Bb4, Note.B4, Note.C5]
+major = [0, 2, 4, 5, 7, 9, 11, 12]
